@@ -1,0 +1,52 @@
+<div class="transparent-yellow" >
+    <div class="container">
+        <div class="resume">
+        <div class="bumper">
+            <div class="row no-gutter">
+                <div class="col-md-4"><h2>Colin Kirk</h2></div>
+                <div class="col-md-8 address"><p class="address">Moore, OK<br />
+                    (405)928-3147 • colinwkirk@ou.edu  •  www.colinwkirk.com</p></div>
+            </div>
+            <div class="row"><hr class="style2"/></div>
+            <div class="row"><h2 class="heading">SKILLS</h2><hr/></div>
+                <!-- ended up not using this but an example of how to use a custom pipe -->
+                <!--<div class="row" *ngFor="let item of skills | keys ">-->
+                <div class="row" *ngFor="let item of skills">
+                     <div class="col-md-4"><p class="subheading">{{item.category}}</p></div>
+                     <div class="col-md-8"><p>{{item.skills.join(", ")}}</p></div>
+                </div>
+            <div class="row"><h2 class="heading">EXPERIENCE</h2><hr/></div>
+            <div *ngFor="let item of experiences">
+                <div class="row">
+                    <p><b>{{item.company}}, </b>{{item.location}} ({{item.dateRange}})</p>
+                </div>
+                <div class="row"><div class="col-md-12">
+                    <i>{{item.title}}</i><br />
+                    <i>Key technologies: {{item.keyTech.join(", ")}}<br />
+                    </i>{{item.summary}}<br />
+                    <ul>
+                        <li *ngFor="let bullet of item.bullets">
+                            {{ bullet }}
+                        </li>
+                    </ul><br/>
+                </div></div>
+            </div>
+            <div class="row">
+              <h2 class="heading">EDUCATION</h2><hr/>
+            </div>
+            <div class="row" *ngFor="let item of educations">
+                <b>{{item.major}}</b>, <i>{{item.university}}</i>, {{item.dateRange}}<br/>
+                <div *ngIf="item.minor != null"><i>Minor: </i>AI and {{item.minor}}<br/></div>
+                <div *ngIf="item.focus != null"><i>Focus: </i>AI and {{item.focus}}<br/></div>
+                <div *ngIf="item.capstone != null"><i>Capstone/Thesis: </i>{{item.capstone}}<br/></div>
+            </div><br/>
+            <div class="row">
+                <h2 class="heading">ACTIVITIES </h2><hr/>
+            </div>
+            <div class="row" *ngFor="let item of activities">
+                <b>{{item.desc}}</b> ({{item.dateRange}}): {{item.detail}}<br/>
+            </div>
+        </div> 
+    </div>
+    </div>
+</div>

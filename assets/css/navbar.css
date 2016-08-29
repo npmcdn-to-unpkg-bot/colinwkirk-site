@@ -1,0 +1,75 @@
+body {
+  padding-top: 2%;
+  padding-bottom: 2%;
+}
+
+.navbar{
+  font-family: 'Fira Sans';
+  font-weight: 200;
+  font-size: 25px;
+  padding-left: inherit;
+  padding-right: inherit;
+  text-transform: uppercase;
+  margin-top: 0px;
+  margin-bottom: 2%;
+  background: rgba(0,0,0,0.6);
+  color: rgb(244,226,202);
+}
+
+.navbar-brand,
+.navbar-nav li a {
+    color:  rgb(244,226,202);
+    line-height: 50px;
+    height: 50px;
+    padding-top: 0;
+}
+.nav > li > a:hover{
+    font-family: 'Fira Sans';
+    background-color:  rgb(244,226,202);
+    color: rgb(123,123,123);
+    font-weight: 300;
+}
+
+.contact-button:hover{
+    font-family: 'Fira Sans';
+    background-color:  rgb(244,226,202);
+    color: rgb(123,123,123);
+    font-weight: 300;
+}
+
+
+.button-text-old {
+    background-color:rgba(0, 0, 0, 0.0);
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+}
+
+.button-text {
+    font-family: 'Fira Sans';
+    font-weight: 200;
+    font-size: 2.5%;
+    padding-left: inherit;
+    padding-right: inherit;
+    text-transform: uppercase;
+    margin-top: 0px;
+    margin-bottom: 2%;
+    background: rgba(0,0,0,0.0);
+    border: none;
+    color: rgb(244,226,202);
+}
+
+.nav > li > button:hover {
+    font-family: 'Fira Sans';
+    background-color:  rgb(244,226,202);
+    color: rgb(123,123,123);
+    font-weight: 300;
+}
+
+.modal-backdrop {
+    z-index: 1500;
+}

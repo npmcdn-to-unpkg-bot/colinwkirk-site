@@ -1,0 +1,60 @@
+.resume {
+    background: rgba(255, 255, 255, 0.6);
+    margin-top: 2%;
+    margin-bottom: 2%;
+    color: black;
+}
+
+.resume-inner-bottom {
+    margin-bottom: 2%;
+}
+
+
+.bumper{
+    padding-top: 5%;
+    padding-right: 5%;
+    padding-bottom: 5%;
+    padding-left: 5%;
+
+
+}
+
+.address {
+    text-align: right;
+}
+
+.heading {
+    text-align: left;
+}
+
+.subheading{
+    font-weight:bold;
+}
+.row.no-gutter {
+    margin-left: 0;
+    margin-right: 0;
+}
+
+.row.no-gutter [class*='col-']:not(:first-child),
+.row.no-gutter [class*='col-']:not(:last-child) {
+    padding-right: 0;
+    padding-left: 0;
+}
+
+hr {
+    display: block;
+    height: 1px;
+    border: 0;
+    border-top: 1px solid black;
+    margin: 1em 0;
+    padding: 0;
+}
+
+hr.style2 {
+    border-top: 3px double black !important;
+}
+
+p {
+    margin-bottom:0;
+    margin-top:0;
+}

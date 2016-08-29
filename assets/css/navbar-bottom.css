@@ -1,0 +1,21 @@
+.navbar-bottom{
+    font-family: 'Fira Sans';
+    font-weight: 200;
+    font-size: 15px;
+    padding-left: inherit;
+    padding-right: inherit;
+    text-transform: lowercase !important;
+    margin-top: 0px;
+    margin-bottom: 2%;
+    background: rgba(0,0,0,0.6);
+    color: rgb(244,226,202) !important;
+}
+
+.navbar-text-center {
+    text-align: center !important;
+}
+.navbar-bottom > a:hover {
+    color: rgba(255, 255, 255, .8) !important;
+}
+
+a, a:hover, a:active, a:visited { color: white !important; }

@@ -1,0 +1,34 @@
+.largeTextBox
+{
+    height:37.5%;
+}
+
+.footer-text {
+   padding-bottom: 15px;
+}
+
+.form-main {
+    padding-bottom: 1.5%px;
+}
+
+.inputs {
+    width:50%;
+}
+.largeTextBoxBak
+{
+    font-size:18pt;
+    height:420px;
+    width:200px;
+}
+
+#txtbox
+{
+    font-size:18pt;
+    height:420px;
+    width:200px;
+}
+
+.err
+{
+    color: red;
+}

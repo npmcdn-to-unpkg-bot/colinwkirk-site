@@ -1,0 +1,16 @@
+<form role="form" class="form-horizontal">
+    <div class="modal-header">
+        <button type="button" class="close" aria-label="Close" (click)="cancel()">
+            <span aria-hidden="true">&times;</span>
+        </button>
+        <h3 class="modal-title">{{titleText}}</h3>
+    </div>
+    <div class="modal-body">
+        {{messageText}}
+        <contact-form [verifyText]="verifyText" [cancelText]="cancelText">Loading contact form...</contact-form>
+    </div>
+    <div class="modal-footer"><!--Any information collected via this website will not be shared, rented,
+            or sold in any way and will only be used for communication with the site owner, Colin W. Kirk.-->{{footer}}
+        <p class="footer-text pull-left"> </p>
+    </div>
+</form>

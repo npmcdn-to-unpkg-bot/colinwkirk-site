@@ -1,0 +1,36 @@
+<form [ngFormModel]="contactForm" class="form-main" (submit)="doContact($event)" name="contactForm">
+    <input required ngControl="name" type="text" class="form-control inputs" placeholder="Your name (required)"><br/>
+    <div *ngIf="name.dirty && !name.valid">
+        <p *ngIf="name.errors.minlength" class="err">
+            Name must be at least 4 characters
+        </p>
+    </div>
+    <input required ngControl="email" class="form-control inputs" type="email" placeholder="Your email (required)"><br/>
+    <input ngControl="site" type="url" class="form-control inputs" placeholder="Your website (optional)"><br/>
+    <div *ngIf="site.value != '' && site.value != null && site.value.indexOf('http')">
+        <p class="err">
+            Your website must start with http:// or https://
+        </p>
+    </div>
+    <input ngControl="phone" type="tel" class="form-control inputs" placeholder="Your phone number (optional)"><br/>
+    <div *ngIf="phone.dirty && !phone.valid">
+        <p *ngIf="phone.errors.minlength" class="err">
+            Please enter a valid phone number with area code (with country code if outside the USA)
+        </p>
+    </div>
+
+    <select required ngControl="subject" class="form-control inputs" #s (change)="callType(s.value)">
+        <option value="" selected disabled>Reason for contact (choose one)</option>
+        <option *ngFor="let subject of emailSubjects" [value]="subject">{{subject}}</option>
+    </select><br/>
+
+    <textarea required ngControl="message" type="text" class="form-control inputs largeTextBox" placeholder="Your message (required)" style="height:200px;width:80%;"></textarea><br/>
+    <div *ngIf="message.dirty && !message.valid">
+        <p *ngIf="message.errors.minlength" class="err">
+            Your message needs to be at least 25 characters.
+        </p>
+    </div>
+    <input ngControl="carbon" type="checkbox">Check to receive CC<br/>
+    <button type="submit" class="btn btn-success pull-left">{{verifyText}}</button>
+    <button (click)="cancel()" class="btn btn-default pull-left">{{cancelText}}</button>
+</form>
