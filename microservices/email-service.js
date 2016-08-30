@@ -7,11 +7,11 @@ var express = require('express');
 var app = express();
 var bodyParser = require('body-parser');
 
-var aws = require('aws-sdk');
+//var aws = require('aws-sdk');
 
-var ses = new aws.SES({apiVersion: '2010-12-01'});
+//var ses = new aws.SES({apiVersion: '2010-12-01'});
 // load aws config
-aws.config.loadFromPath('/opt/colin-site/conf/config.json');
+//aws.config.loadFromPath('/opt/colin-site/conf/config.json');
 
 
 /*set up cors stuff*/
@@ -78,7 +78,7 @@ app.post("/api/contact/send-email", function (req, res){
       (req.body['data']['carbon'] ? "requested " : "did not request ") +
       "a CC";
 
-    ses.sendEmail( {
+    /*ses.sendEmail( {
        Source: from,
        Destination: { ToAddresses: to },
        Message: {
@@ -96,7 +96,7 @@ app.post("/api/contact/send-email", function (req, res){
         if(err) throw err
             console.log('Email sent:');
             console.log(data)console;
-     });
+     });*/
     res.status(200).send("Sending email");
 });
 

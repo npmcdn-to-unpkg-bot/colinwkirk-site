@@ -57,7 +57,7 @@ export class ContactFormComponent {
         this.restService = restService;
 
         this.http = http;
-        this.actionUrl
+        this.actionUrl = 'http://localhost:8000/api/contact/send-email';
         //this.actionUrl = 'www.google.com';
         this.headers = new Headers();
         this.headers.append('Content-Type', 'application/json');
