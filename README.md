@@ -1,5 +1,5 @@
 # colinwkirk-site
-Personal website of Colin Kirk
+Personal website of Colin W. Kirk
 
 
 npm i to get artifacts (may need to install some globals)
