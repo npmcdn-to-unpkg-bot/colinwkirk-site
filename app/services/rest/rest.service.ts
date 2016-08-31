@@ -14,7 +14,7 @@ export class RestService {
     }
 
     //private heroesUrl = 'app/heroes';  // URL to web API
-    private actionUrl = 'http://localhost:8000/api/contact/send-email';
+    private actionUrl = 'http://www.colinwkirk.com:8000/api/contact/send-email';
 
     getData():Observable<any[]> {
         return this.http.get(this.actionUrl)

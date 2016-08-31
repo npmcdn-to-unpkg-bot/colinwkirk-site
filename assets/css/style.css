@@ -7,7 +7,6 @@
     height: 5%;
 }
 
-
 body {
     background-repeat: no-repeat;
     background-position: center;
@@ -117,9 +116,32 @@ body {
     margin-bottom: 0px;
     font-family: 'Fira Sans';
     font-weight: 400;
-
-
 }
+
+@media (max-width: 768px) {
+    .top-buffer{
+        margin-top: 120px !important;
+    }
+}
+
+@media (max-width: 768px) {
+    .top-buffer{
+        margin-top: 120px !important;
+    }
+}
+
+@media (max-width: 768px) {
+    .top-buffer{
+        margin-top: 120px !important;
+    }
+}
+
+@media (max-width: 530px) {
+    .top-buffer{
+        margin-top: 180px !important;
+    }
+}
+
 
 .icons {
     height: 100px;
@@ -153,4 +175,11 @@ body {
 
 .centered {
     text-align: center;
+}
+
+.center-image{
+    max-width: 100%;
+    max-height: 100%;
+    display: block;
+    margin: auto;
 }

@@ -1,4 +1,4 @@
-<div class="transparent-yellow">
+<div class="transparent-yellow top-buffer">
 
     <div class="transparent-yellow-2">
         <div class="container">
@@ -8,9 +8,20 @@
                 </div>
             </div>
             <div class="row">
-                <div class="col-md-8">In the future, this page will be a growing collection of JavaScript/HTML5 apps that I've written. Some will be utilitarian tools (a tool to track what timezones the workers in a distributed team are in, for example), and some will just be fun toys that you would never actually use in a production environment (a neural net distributed across a number of NodeJS servers). For now, I'll include a few links to some of my favorite apps.
+                <div class="col-md-8">
+                    <carousel [interval]="myInterval" [noWrap]="noWrapSlides">
+                        <slide *ngFor="let slidez of slides; let index=index"
+                               [active]="slidez.active">
+                            <img [src]="slidez.image" class="center-image">
+
+                            <div class="carousel-caption">
+                                <h4><a href="{{slidez.link}}" style="color:white;">{{slidez.text}}</a></h4>
+                            </div>
+                        </slide>
+                    </carousel>
                 </div>
                 <div class="col-md-4">
+                    <p>In the future, this page will be a growing collection of JavaScript/HTML5 apps that I've written. Some will be utilitarian tools (a tool to track what timezones the workers in a distributed team are in, for example), and some will just be fun toys that you would never actually use in a production environment (a neural net distributed across a number of NodeJS servers). For now, I'll include a few links to some of my favorite apps.</p>
                     <a href="http://synaptic.juancazala.com/#/">Synaptic - a NodeJS Neural Network</a><br/>
                     <a href="http://andrew-hoyer.com/experiments/cloth/">Cloth Experiment</a><br/>
                     <a href="http://zenphoton.com/">Zen Photon Garden</a><br/>

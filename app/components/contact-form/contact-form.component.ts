@@ -28,7 +28,7 @@ export class ContactFormComponent {
     @Input() verifyText:string;
 
     private data : any;
-    private actionUrl = 'http://127.0.0.1:8000/api/contact/send-email';
+    private actionUrl = 'http://www.colinwkirk.com:8000/api/contact/send-email';
     private headers : Headers;
     private name : Control;
 
@@ -48,7 +48,8 @@ export class ContactFormComponent {
         'Professional Networking',
         'Bug Report',
         'Suggestion For Website',
-        'Sign Up For Updates'
+        'Sign Up For Updates',
+        'Other'
     ];
 
 
@@ -57,7 +58,7 @@ export class ContactFormComponent {
         this.restService = restService;
 
         this.http = http;
-        this.actionUrl = 'http://localhost:8000/api/contact/send-email';
+        this.actionUrl
         //this.actionUrl = 'www.google.com';
         this.headers = new Headers();
         this.headers.append('Content-Type', 'application/json');

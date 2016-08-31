@@ -10,7 +10,8 @@ export class ResumeExperiences  {
 
         private _experiences = [
             new ResumeExperience("Changeis, Inc.", "Oklahoma City, OK", "December 2015 - Present", "Software Engineer", ["Java", "Python", "Shell Scripting", "TeamCity", "Git/Bitbucket", "JIRA", "Maven", "Ant", "Gradle", "GWT"], "Design and implementation of Continuous Integration architecture and workflow from scratch using Atlassian BitBucket Git, JetBrains TeamCity build server, JFrog Artifactory repository, and Gitflow workflow", ["Implemented TeamCity Enterprise build server with branch specific automatically triggered builds across 19 individual projects, storing built artifacts in Artifactory repository using semantic versioning",
-                "Implemented integration points between JIRA, BitBucket, and TeamCity", "Implemented Gitflow branching strategy on Atlassian Bitbucket Git",
+                "Created and modified a number of high-complexity SQL queries and database views for business reporting.",
+                "Implemented integration points between JIRA, BitBucket, and TeamCity", "Implemented Gitflow branching strategy on Atlassian Bitbucket Git. Contribute to Java codebase in response to user stories at all points from API to web UI.",
                 "Heavily refactored very large and complex Ant build spanning 30+ individual build scripts and thousands of lines of Ant scripting to reduce build time from approximately two hours to approximately 10 minutes",
                 "Broke four interdependent builds from this Ant project into independently buildable and installable projects",
                 "Began transitioning Maven projects to Gradle",

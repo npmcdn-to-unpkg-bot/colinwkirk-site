@@ -7,11 +7,12 @@ var express = require('express');
 var app = express();
 var bodyParser = require('body-parser');
 
-//var aws = require('aws-sdk');
-
-//var ses = new aws.SES({apiVersion: '2010-12-01'});
+var aws = require('aws-sdk');
 // load aws config
-//aws.config.loadFromPath('/opt/colin-site/conf/config.json');
+//using shared credentials on system so no need to set user/pass
+aws.config.update({region: 'us-west-2'});
+
+var ses = new aws.SES({apiVersion: '2010-12-01'});
 
 
 /*set up cors stuff*/
@@ -60,13 +61,14 @@ app.post("/api/contact/send-email", function (req, res){
     res.header("Access-Control-Allow-Origin", "*");
     res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
     // send to list
-    var to = ['colinwkirk@ou.com', 'colin@colinwkirk.com']
-
+    var me = "colinwkirk@ou.edu"
+    var to = ["cosmic.cow.ck@gmail.com"]
     // this must relate to a verified SES account
     var from = req.body['data']['email'];
-    var subject = req.body['data']['subject']
+    var subject = "Contact via website: " + req.body['data']['subject']
 
     var body = "Contact via website, details: \n" + req.body['data']['name'] + "\n"
+    body += from + '\n'
     if (req.body['data']['site'] != "" && req.body['data']['site'] != null) {
         body += req.body['data']['site'] + "\n";
     }
@@ -77,26 +79,28 @@ app.post("/api/contact/send-email", function (req, res){
     body += "\n\nContact " +
       (req.body['data']['carbon'] ? "requested " : "did not request ") +
       "a CC";
+    var params = {
+        Destination: { /* required */
+            ToAddresses: to
+        },
+        Message: { /* required */
+            Body: { /* required */
+                Text: {
+                    Data: body /* required*/
+                }
+            },
+            Subject: { /* required */
+                Data: subject /* required */
 
-    /*ses.sendEmail( {
-       Source: from,
-       Destination: { ToAddresses: to },
-       Message: {
-           Subject:Source {
-              Data: subject
-           },
-           Body: {
-               Text: {
-                   Data: body,
-               }
             }
-       }
-    }
-    , function(err, data) {
-        if(err) throw err
-            console.log('Email sent:');
-            console.log(data)console;
-     });*/
+        },
+        //since i'm using free tier i need to make it from myself
+        Source: me /* required */
+    };
+    ses.sendEmail(params, function(err, data) {
+        if (err) console.log(err, err.stack); // an error occurred
+        else     console.log(data);           // successful response
+    });
     res.status(200).send("Sending email");
 });
 

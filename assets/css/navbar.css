@@ -1,3 +1,45 @@
+@media (max-width: 768px) {
+
+    .navbar-collapse.collapse {
+        display: block!important;
+    }
+
+    .navbar-nav>li, .navbar-nav {
+        float: left !important;
+    }
+
+    .navbar-nav.navbar-right:last-child {
+        margin-right: -15px !important;
+    }
+
+    .navbar-right {
+        float: right!important;
+    }
+
+    .navbar{
+        font-size: 18px !important;
+    }
+
+    .navbar-brand,
+    .navbar-nav li a {
+        line-height: 40px;
+        height: 40px;
+    }
+}
+
+@media (max-width: 768px) {
+    .navbar{
+        font-size: 12px !important;
+    }
+
+    .navbar-brand,
+    .navbar-nav li a {
+        line-height: 35px;
+        height: 35px;
+    }
+}
+
+
 body {
   padding-top: 2%;
   padding-bottom: 2%;
@@ -15,6 +57,7 @@ body {
   background: rgba(0,0,0,0.6);
   color: rgb(244,226,202);
 }
+
 
 .navbar-brand,
 .navbar-nav li a {
@@ -73,3 +116,5 @@ body {
 .modal-backdrop {
     z-index: 1500;
 }
+
+
